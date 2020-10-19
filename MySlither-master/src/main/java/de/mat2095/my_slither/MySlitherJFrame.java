@@ -239,18 +239,22 @@ final class MySlitherJFrame extends JFrame {
             }
         });
 
-        highscoreList = new JTable(10, 2);
+        highscoreList = new JTable(10, 3);
         highscoreList.setEnabled(false);
-        highscoreList.getColumnModel().getColumn(0).setMinWidth(64);
-        highscoreList.getColumnModel().getColumn(1).setMinWidth(192);
-        highscoreList.getColumnModel().getColumn(0).setHeaderValue("length");
-        highscoreList.getColumnModel().getColumn(1).setHeaderValue("name");
+        highscoreList.getColumnModel().getColumn(0).setMinWidth(44);
+        highscoreList.getColumnModel().getColumn(1).setMinWidth(64);
+        highscoreList.getColumnModel().getColumn(2).setMinWidth(172);
+        highscoreList.getColumnModel().getColumn(0).setHeaderValue("Place");
+        highscoreList.getColumnModel().getColumn(1).setHeaderValue("length");
+        highscoreList.getColumnModel().getColumn(2).setHeaderValue("name");
         highscoreList.getTableHeader().setReorderingAllowed(false);
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(SwingConstants.RIGHT);
         highscoreList.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
         highscoreList.setPreferredScrollableViewportSize(new Dimension(64 + 192, highscoreList.getPreferredSize().height));
-
+        for(int i = 0; i < 10; i++) {
+            highscoreList.setValueAt(i + 1, i, 0);
+        }
         // == split-panes ==
         rightSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true, canvas, new JScrollPane(highscoreList));
         rightSplitPane.setDividerSize(rightSplitPane.getDividerSize() * 4 / 3);
@@ -426,8 +430,8 @@ final class MySlitherJFrame extends JFrame {
     }
 
     void setHighscoreData(int row, String name, int length, boolean highlighted) {
-        highscoreList.setValueAt(highlighted ? "<html><b>" + length + "</b></html>" : length, row, 0);
-        highscoreList.setValueAt(highlighted ? "<html><b>" + name + "</b></html>" : name, row, 1);
+        highscoreList.setValueAt(highlighted ? "<html><b>" + length + "</b></html>" : length, row, 1);
+        highscoreList.setValueAt(highlighted ? "<html><b>" + name + "</b></html>" : name, row, 2);
     }
 
     private enum Status {
