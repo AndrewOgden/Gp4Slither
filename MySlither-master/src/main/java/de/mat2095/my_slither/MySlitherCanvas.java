@@ -21,12 +21,7 @@ final class MySlitherCanvas extends JPanel {
     private static final Color BACKGROUND_COLOR = new Color(0x2B2B2B);
     private static final Color FOREGROUND_COLOR = new Color(0xA9B7C6);
     private static final Color SECTOR_COLOR = new Color(0x803C3F41, true);
-    private static final Color FOOD_COLOR1 = new Color(0x007832);
-    private static final Color FOOD_COLOR2 = new Color(0xcc3333);
-    private static final Color FOOD_COLOR3 = new Color(0x2255cc);
-    private static final Color FOOD_COLOR4 = new Color(0xcccc33);
-    private static final Color FOOD_COLOR5 = new Color(0x772277);
-    private static final Color FOOD_COLOR6 = new Color(0xcc6622);
+    private static final Color FOOD_COLOR = new Color(0xCC7832);
     private static final Color PREY_COLOR = new Color(0xFFFF00);
     private static final float[] PREY_HALO_FRACTIONS = new float[]{0.5f, 1f};
     private static final Color[] PREY_HALO_COLORS = new Color[]{new Color(0x60FFFF00, true), new Color(0x00FFFF00, true)};
@@ -181,27 +176,8 @@ final class MySlitherCanvas extends JPanel {
             g.drawOval(-64, -64, model.gameRadius * 2 + 128, model.gameRadius * 2 + 128);
             g.setStroke(oldStroke);
 
-
+            g.setColor(FOOD_COLOR);
             model.foods.values().forEach(food -> {
-
-                if(food.getColor() < 1) {
-                    g.setColor(FOOD_COLOR1);
-                }
-                else if(food.getColor() < 2) {
-                    g.setColor(FOOD_COLOR2);
-                }
-                else if(food.getColor() < 3) {
-                    g.setColor(FOOD_COLOR3);
-                }
-                else if(food.getColor() < 4) {
-                    g.setColor(FOOD_COLOR4);
-                }
-                else if(food.getColor() < 5) {
-                    g.setColor(FOOD_COLOR5);
-                }
-                else if(food.getColor() < 6) {
-                    g.setColor(FOOD_COLOR6);
-                }
                 double foodRadius = food.getRadius();
                 g.fill(new Ellipse2D.Double(food.x - foodRadius, food.y - foodRadius, foodRadius * 2, foodRadius * 2));
             });
