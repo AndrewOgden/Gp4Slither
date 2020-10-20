@@ -18,9 +18,9 @@ import javax.swing.*;
 
 final class MySlitherCanvas extends JPanel {
 
-    private static final Color BACKGROUND_COLOR = new Color(0x2B2B2B);
-    private static final Color FOREGROUND_COLOR = new Color(0xA9B7C6);
-    private static final Color SECTOR_COLOR = new Color(0x803C3F41, true);
+    private static final Color BACKGROUND_COLOR = new Color(0xF80A0A);
+    private static final Color FOREGROUND_COLOR = new Color(0x0D7DF5);
+    private static final Color SECTOR_COLOR = new Color(0x34F50D, true);
     private static final Color FOOD_COLOR1 = new Color(0x007832);
     private static final Color FOOD_COLOR2 = new Color(0xcc3333);
     private static final Color FOOD_COLOR3 = new Color(0x2255cc);
