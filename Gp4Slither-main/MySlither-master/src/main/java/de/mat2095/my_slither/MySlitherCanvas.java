@@ -31,7 +31,9 @@ final class MySlitherCanvas extends JPanel {
     private static final Color PREY_COLOR = new Color(0xFFFF00);
     private static final float[] PREY_HALO_FRACTIONS = new float[]{0.5f, 1f};
     private static final Color[] PREY_HALO_COLORS = new Color[]{new Color(0x60FFFF00, true), new Color(0x00FFFF00, true)};
+    private static final Color SNAKE_COLOR = new Color(0x287BDE);
 
+    //add standard colours
     private static final Color SNAKE_COLOR00 = new Color(0x800080);
     private static final Color SNAKE_COLOR01 = new Color(0x0000FF);
     private static final Color SNAKE_COLOR02 = new Color(0x00FFFF);
@@ -219,21 +221,23 @@ final class MySlitherCanvas extends JPanel {
             g.setFont(NAME_FONT.deriveFont((float) (18 / Math.pow(scale, 0.75))));
             model.snakes.values().forEach(snake -> {
                 
-                if(snake.getColor() = "1") { g.setColor(SNAKE_COLOR01); 
+                if(snake.getColor() == "00 - purple") { g.setColor(SNAKE_COLOR00); 
                 }
-                else if(snake.getColor() = "2") { g.setColor(SNAKE_COLOR02); 
+                else if(snake.getColor() == "01 - blue") { g.setColor(SNAKE_COLOR01); 
                 }
-                else if(snake.getColor() = "3") { g.setColor(SNAKE_COLOR03);
+                else if(snake.getColor() == "02 - cyan") { g.setColor(SNAKE_COLOR02); 
                 }
-                else if(snake.getColor() = "4") { g.setColor(SNAKE_COLOR04);
+                else if(snake.getColor() == "03 - green") { g.setColor(SNAKE_COLOR03);
                 }
-                else if(snake.getColor() = "5") { g.setColor(SNAKE_COLOR05);
+                else if(snake.getColor() == "04 - yellow") { g.setColor(SNAKE_COLOR04);
                 }
-                else if(snake.getColor() = "6") { g.setColor(SNAKE_COLOR06);
+                else if(snake.getColor() == "05 - orange") { g.setColor(SNAKE_COLOR05);
                 }
-                else if(snake.getColor() = "7") { g.setColor(SNAKE_COLOR07);
+                else if(snake.getColor() == "06 - salmon") { g.setColor(SNAKE_COLOR06);
                 }
-                else if(snake.getColor() = "8") { g.setColor(SNAKE_COLOR08);
+                else if(snake.getColor() == "07 - red") { g.setColor(SNAKE_COLOR07);
+                }
+                else if(snake.getColor() == "08 - violet") { g.setColor(SNAKE_COLOR08);
                 }
 
                 double thickness = 16 + snake.body.size() / 4.0;

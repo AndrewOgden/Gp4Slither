@@ -14,10 +14,6 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.table.DefaultTableCellRenderer;
 
-//import HashMap
-import java.util.HashMap;
-
-
 
 final class MySlitherJFrame extends JFrame {
 
