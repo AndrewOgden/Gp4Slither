@@ -16,6 +16,12 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 
+//import HashMap
+import java.util.HashMap;
+
+
+
+
 final class MySlitherCanvas extends JPanel {
 
     private static final Color BACKGROUND_COLOR = new Color(0x2B2B2B);
@@ -25,7 +31,17 @@ final class MySlitherCanvas extends JPanel {
     private static final Color PREY_COLOR = new Color(0xFFFF00);
     private static final float[] PREY_HALO_FRACTIONS = new float[]{0.5f, 1f};
     private static final Color[] PREY_HALO_COLORS = new Color[]{new Color(0x60FFFF00, true), new Color(0x00FFFF00, true)};
-    private static final Color SNAKE_COLOR = new Color(0x287BDE);
+
+    private static final Color SNAKE_COLOR00 = new Color(0x800080);
+    private static final Color SNAKE_COLOR01 = new Color(0x0000FF);
+    private static final Color SNAKE_COLOR02 = new Color(0x00FFFF);
+    private static final Color SNAKE_COLOR03 = new Color(0x008000);
+    private static final Color SNAKE_COLOR04 = new Color(0xFFFF00);
+    private static final Color SNAKE_COLOR05 = new Color(0xFFA500);
+    private static final Color SNAKE_COLOR06 = new Color(0xFA8072);
+    private static final Color SNAKE_COLOR07 = new Color(0xFF0000);
+    private static final Color SNAKE_COLOR08 = new Color(0xEE82EE);
+
     private static final Color OWN_SNAKE_COLOR = new Color(0x39AFFF);
     private static final float[] SNAKE_HALO_FRACTIONS = new float[]{0.5f, 1f};
     private static final Color[] SNAKE_HALO_COLORS = new Color[]{new Color(0x60287BDE, true), new Color(0x00287BDE, true)};
@@ -37,6 +53,12 @@ final class MySlitherCanvas extends JPanel {
     private static final Color NAME_SHADOW_COLOR = new Color(0xC02B2B2B, true);
     private static final Font NAME_FONT = Font.decode("SansSerif-BOLD");
     private static final Font DEBUG_FONT = Font.decode("SansSerif-PLAIN-12");
+
+
+    
+    //private Hashmap here
+    private HashMap<String, Color> colours = new HashMap<>();
+
 
     private boolean[] map;
     private final MySlitherJFrame view;
@@ -196,6 +218,24 @@ final class MySlitherCanvas extends JPanel {
             oldStroke = g.getStroke();
             g.setFont(NAME_FONT.deriveFont((float) (18 / Math.pow(scale, 0.75))));
             model.snakes.values().forEach(snake -> {
+                
+                if(snake.getColor() = "1") { g.setColor(SNAKE_COLOR01); 
+                }
+                else if(snake.getColor() = "2") { g.setColor(SNAKE_COLOR02); 
+                }
+                else if(snake.getColor() = "3") { g.setColor(SNAKE_COLOR03);
+                }
+                else if(snake.getColor() = "4") { g.setColor(SNAKE_COLOR04);
+                }
+                else if(snake.getColor() = "5") { g.setColor(SNAKE_COLOR05);
+                }
+                else if(snake.getColor() = "6") { g.setColor(SNAKE_COLOR06);
+                }
+                else if(snake.getColor() = "7") { g.setColor(SNAKE_COLOR07);
+                }
+                else if(snake.getColor() = "8") { g.setColor(SNAKE_COLOR08);
+                }
+
                 double thickness = 16 + snake.body.size() / 4.0;
                 if (snake.body.size() >= 2) {
                     g.setColor(snake == model.snake ? OWN_SNAKE_BODY_COLOR : SNAKE_BODY_COLOR);

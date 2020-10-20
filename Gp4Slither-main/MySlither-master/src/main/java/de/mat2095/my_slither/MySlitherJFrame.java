@@ -14,7 +14,7 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.table.DefaultTableCellRenderer;
 
-//import HashMap to increase colours
+//import HashMap
 import java.util.HashMap;
 
 
@@ -101,9 +101,6 @@ final class MySlitherJFrame extends JFrame {
     private final JScrollBar logScrollBar;
     private final JTable highscoreList;
     private final MySlitherCanvas canvas;
-
-    //private Hashmap here
-    private HashMap<String, Color> colours = new HashMap<>();
 
 
     private final long startTime;
@@ -455,26 +452,5 @@ final class MySlitherJFrame extends JFrame {
             this.allowModifyData = allowModifyData;
         }
     }
-        
-    private Color getColourFromString(String col)
-	{
-		Color c = colours.get(col.toUpperCase());
-
-		if (c == null && col.startsWith("#"))
-		{
-			int r = Integer.valueOf( col.substring( 1, 3 ), 16 );
-			int g = Integer.valueOf( col.substring( 3, 5 ), 16 );
-			int b = Integer.valueOf( col.substring( 5, 7 ), 16 );
-
-			c = new Color(r,g,b);
-			colours.put(col.toUpperCase(), c);
-		}
-
-		if (c == null)
-			c = Color.WHITE;
-
-		return c;
-	}
-
 
 }

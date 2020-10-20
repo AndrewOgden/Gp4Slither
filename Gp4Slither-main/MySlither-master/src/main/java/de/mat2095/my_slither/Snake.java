@@ -31,6 +31,7 @@ class Snake {
         this.model = model;
         this.colour = col;
     }
+
     
     public String getcolour(){
         return colour;
